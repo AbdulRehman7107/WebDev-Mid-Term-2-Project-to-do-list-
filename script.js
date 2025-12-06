@@ -3,7 +3,6 @@ const addBtn = document.getElementById("addBtn");
 const list = document.getElementById("taskList");
 const doneSound = document.getElementById("doneSound");
 
-// Load tasks
 function getAllLocalStorage() {
   const allItems = [];
   for (let i = 0; i < localStorage.length; i++) {
@@ -38,13 +37,12 @@ function createTaskElement(taskText) {
   delBtn.textContent = "Delete";
   delBtn.className = "delete-btn";
 
-  // Prevent delete from triggering done state
+  
   delBtn.onclick = (event) => {
     event.stopPropagation();
     li.remove();
   };
 
-  // Toggle completed state
   li.addEventListener("click", () => {
     li.classList.toggle("completed");
 
@@ -72,3 +70,4 @@ function renderTask() {
 }
 
 renderTask();
+
